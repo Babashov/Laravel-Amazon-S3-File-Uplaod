@@ -32,6 +32,7 @@ class FolderController extends Controller
                 "name"=>$folder_name,
                 "path"=>$folder_name
             ]);
+            return $folder;
         }else{
             return [
                 "msg"=>"Folder not created.Something went wrong"
@@ -42,6 +43,7 @@ class FolderController extends Controller
 
     public function show(Folder $folder)
     {
-
+        $dir = Storage::disk('s3')->allDirectories($folder->path);
+        return $dir;
     }
 }
