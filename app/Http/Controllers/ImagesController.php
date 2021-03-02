@@ -14,7 +14,8 @@ class ImagesController extends Controller
 
     public function store(Request $request)
     {
-        dd($request);
+        $path = $request->file('image')->store('images');
+        
     }
 
     public function show(Image $image)
