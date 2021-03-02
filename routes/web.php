@@ -7,8 +7,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/images',[ImagesController::class,['create']]);
+Route::get('/images',[ImagesController::class,'create']);
 
-Route::post('/images',[ImagesController::class,["strore"]]);
+Route::post('/images',[ImagesController::class,"strore"]);
 
-Route::get("/images/{show}",[ImagesController::class,["show"]]);
+Route::get("/images/{show}",[ImagesController::class,"show"]);
