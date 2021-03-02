@@ -7,6 +7,10 @@
     <title>Amazon S3 Image File Upload</title>
 </head>
 <body>
-    <h1>Amazon S3 Image File Upload</h1>
+    <form action="{{route('images')}}" method="post" enctype="multipart/form-data">
+        @csrf
+        <input type="file" name="name">
+        <input type="submit" value="Upload">
+    </form>
 </body>
 </html>
