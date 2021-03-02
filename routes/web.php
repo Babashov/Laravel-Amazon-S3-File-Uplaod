@@ -11,4 +11,4 @@ Route::get('/images',[ImagesController::class,'create']);
 
 Route::post('/images',[ImagesController::class,"store"])->name('images');
 
-Route::get("/images/{show}",[ImagesController::class,"show"])->name('images.show');
+Route::get("/images/{image}",[ImagesController::class,"show"])->name('images.show');
