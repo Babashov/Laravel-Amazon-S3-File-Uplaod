@@ -9,6 +9,6 @@ Route::get('/', function () {
 
 Route::get('/images',[ImagesController::class,'create']);
 
-Route::post('/images',[ImagesController::class,"strore"]);
+Route::post('/images',[ImagesController::class,"store"])->name('images');
 
-Route::get("/images/{show}",[ImagesController::class,"show"]);
+Route::get("/images/{show}",[ImagesController::class,"show"])->name('images.show');
