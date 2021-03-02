@@ -16,14 +16,27 @@ class FolderController extends Controller
     public function store(Request $request)
     {
         $folder_name = $request->input("folder_name");
+
+        if(Storage::disk('s3')->exists($folder_name))
+        {
+            return [
+                "msg"=>"Folder is already exists"
+            ];
+        }
+        
         $folderCreate = Storage::disk('s3')->makeDirectory($folder_name);
 
-        dd($folderCreate);
-
-        // $folder = Folder::create([
-        //     "name"=>$folder_name,
-        //     "path"=>$folder_name
-        // ]);
+        if($folderCreate)
+        {
+            $folder = Folder::create([
+                "name"=>$folder_name,
+                "path"=>$folder_name
+            ]);
+        }else{
+            return [
+                "msg"=>"Folder not created.Something went wrong"
+            ];
+        }
 
     }
 
