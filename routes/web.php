@@ -1,13 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ImagesController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/images',[Images::class,['create']]);
+Route::get('/images',[ImagesController::class,['create']]);
 
-Route::post('/images',[Images::class,["strore"]]);
+Route::post('/images',[ImagesController::class,["strore"]]);
 
-Route::get("/images/{show}",[Images::class,["show"]]);
+Route::get("/images/{show}",[ImagesController::class,["show"]]);
