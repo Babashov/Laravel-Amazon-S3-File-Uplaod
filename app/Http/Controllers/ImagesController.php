@@ -8,16 +8,16 @@ class ImagesController extends Controller
 {
     public function create()
     {
-
+        return view("images.create")
     }
 
-    public function store()
+    public function store(Request $request)
     {
-
+        dd($request);
     }
 
-    public function show()
+    public function show(Image $image)
     {
-        
+        dd($image);
     }
 }
