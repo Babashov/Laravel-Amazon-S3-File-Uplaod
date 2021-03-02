@@ -16,4 +16,4 @@ Route::get("/images/{image}",[ImagesController::class,"show"])->name('images.sho
 
 Route::get('/folder',[FolderController::class,"create"]);
 Route::post('/folder',[FolderController::class,"store"])->name("folder");
-Route::get("/folder/{folder}",[FolderController::class,["show"]);
+Route::get('/folder/{folder}',[FolderController::class,"show"]);
